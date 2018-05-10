@@ -56,7 +56,7 @@ class PopUpIkkunaOnnistuminen(Popup):
     pass
 
 
-class PopUpIkkunaEpäonnistuminen(Popup):
+class PopUpIkkunaEpaonnistuminen(Popup):
     """
     Luokka PopUp-ikkunalle, joka tulee esille, kun käyttäjä ei onnistu
     tallentamaan nimeä tietorakenteeseen
@@ -70,9 +70,11 @@ class BeerPong(Screen):
 
     pass
 
+
 class Peli(Screen):
     pelaajat1 = ObjectProperty(True)
     pelaajat2 = ObjectProperty(False)
+
 
 class UusiPeli(Screen):
 
@@ -121,7 +123,7 @@ class UusiPeli(Screen):
 
     # Metodi onnistumisesta kertovalle PopUp-ikkunale
     def huomautus(self):
-        huomautus_ikkuna = PopUpIkkunaEpäonnistuminen()
+        huomautus_ikkuna = PopUpIkkunaEpaonnistuminen()
         huomautus_ikkuna.open()
 
     # Metodi epäonnistumisesta kertovalle PopUp-ikkunale

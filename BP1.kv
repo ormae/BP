@@ -5,9 +5,7 @@
 
 
 # Tästä alkaa pitkä osio, jossa kerrotaan erilaisia fyysisiä ominaisuuksia
-# näytöille. Muuten tämän voisi laittaa erilliseen tiedostoon, mutta monen
-# näytön tapauksessa asiat menisivät hieman monimutkaisiksi. Tästä syystä
-# samassa tiedostossa
+# näytöille.
 
 
 NaytonOhjausta:
@@ -16,23 +14,6 @@ NaytonOhjausta:
     UusiPeli:
     Tilastot:
 
-<PopUpIkkunaEpäonnistuminen>:
-    size_hint: 0.3, 0.3
-    auto_dismiss: False
-    title: "Huomautus!"
-    Button:
-        text: "Syota nimimerkki!"
-        font_size: 20
-        on_press: root.dismiss()
-
-<PopUpIkkunaOnnistuminen>
-    size_hint: 0.5, 0.5
-    auto_dismiss: False
-    title: "Huomio!"
-    Button:
-        text: "Nimimerkki ladattu onnistuneesti"
-        font_size: 18
-        on_press: root.dismiss()
 
 # Netistä löytynyt tapa, joka ohjaa teksti-ikkunoita scaalautumaan näytön
 # kokoa muutettaessa
@@ -73,6 +54,26 @@ NaytonOhjausta:
             size: self.texture_size
             pos: int(self.center_x - self.texture_size[0] / 2.), int(self.center_y - self.texture_size[1] / 2.)
         PopMatrix
+
+# PopUpIkkuna, kun pelaajat eivät syötä kaikkia nimiä.
+<PopUpIkkunaEpaonnistuminen>:
+    size_hint: 0.8, 0.8
+    auto_dismiss: False
+    title: "Huomautus!"
+    ScaleButton:
+        text: "Syota nimimerkki!"
+        font_size: 20
+        on_press: root.dismiss()
+
+# Tällä hetkellä turha, ei kuitenkaan poisteta, jos tarvitaan jossakin kohdassa
+<PopUpIkkunaOnnistuminen>
+    size_hint: 0.5, 0.5
+    auto_dismiss: False
+    title: "Huomio!"
+    ScaleButton:
+        text: "Nimimerkki ladattu onnistuneesti"
+        font_size: 18
+        on_press: root.dismiss()
 
 # Alkunäytön spesifiointi
 <Beerpong>:
@@ -158,22 +159,25 @@ NaytonOhjausta:
     pelaaja4:p4
     GridLayout:
         orientation: "vertical"
-        rows: 6
-        padding: 20
-        spacing: 20
+        rows: 8
+        padding: 10
+        spacing: 8
         ScaleLabel:
             text: "Syötä Joukkueet"
-            size_hint_y: 0.3
+            size_hint_y: 0.5
             font_size: 40
+        ScaleLabel:
+            text: "Joukkue 1"
+            font_size: 20
         BoxLayout:
             orientation: "horizontal"
             TextInput:
                 id: p1
                 font_size: 30
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
             ScaleButton:
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 size_hint_x: 0.3
                 text: "Luo uusi"
                 on_press: ""
@@ -183,23 +187,28 @@ NaytonOhjausta:
             TextInput:
                 id: p2
                 font_size: 30
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
             ScaleButton:
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 size_hint_x: 0.3
                 text: "Luo uusi"
                 on_press: ""
+
+        ScaleLabel:
+            text: "Joukkue 2"
+            font_size: 20
+            size_hint_y: 0.9
 
         BoxLayout:
             orientation: "horizontal"
             TextInput:
                 id: p3
                 font_size: 30
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
             ScaleButton:
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 size_hint_x: 0.3
                 text: "Luo uusi"
                 on_press: ""
@@ -209,10 +218,10 @@ NaytonOhjausta:
             TextInput:
                 id: p4
                 font_size: 30
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
             ScaleButton:
-                size_hint_y: 0.5
+                size_hint_y: 0.9
                 size_hint_x: 0.3
                 text: "Luo uusi"
                 on_press: ""
