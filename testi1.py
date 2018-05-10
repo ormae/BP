@@ -2,20 +2,31 @@
 Suunnitelma:
 - Pääikkuna:
     pelaa
+        Valmispeliinlista = [False,False,False,False]
+
         # Ylös syötä pelaajat label
-        # Neljä tekstiriviä, Alas oikealle haku nappula
+        # Neljä Entryriviä, Alas oikealle haku nappula, Alas vasemmalle
+        # takaisin-nappula
+
         # Jos pelaajaa ei löydetä tietokannasta, sen tekstikentän alle
-        # ilmestyy luo pelaaja nappula.
-        # kun kaikki pelaajat ovat tietokannassa aloitetaan peli->
-            peli
-                Radionappuloita
-                Alasvasen: takaisin Alasoikea: Syötätulos.
+        # ilmestyy "luo pelaaja"-nappula.
+
+
+            haku
+                # Jos pelaaja löytyy tietokannassa muutetaan sen seuraavan listan
+                # totuus arvo sen pelaajan indeksille.(Valmispeliinlista)
+            luo uusipelaaja
+                # Luodaan uusipelaaja ja muutetaan Valmispeliin listaa.
+
+
+            # kun kaikki pelaajat ovat tietokannassa aloitetaan peli->
+                peli
+                    Radionappuloita
+                    Alasvasen: takaisin Alasoikea: Syötätulos.
     tulokset
-        highscoret layout toteutettu.
+        highscoret layout toteutettu. Tietorakenne toteuttamattas
 
 """
-
-
 
 
 # Importteja
